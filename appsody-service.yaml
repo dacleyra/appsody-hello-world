@@ -1,0 +1,14 @@
+apiVersion: serving.knative.dev/v1alpha1
+kind: Service
+metadata:
+  name: appsody-hello-world
+spec:
+  runLatest:
+    configuration:
+      revisionTemplate:
+        spec:
+          container:
+            image: docker-registry.default.svc:5000/dacleyra/appsody-hello-world
+            imagePullPolicy: Always
+            ports:
+            - containerPort: 9080
