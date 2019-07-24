@@ -1,6 +1,7 @@
 apiVersion: serving.knative.dev/v1alpha1
 kind: Service
 metadata:
+  namespace: appsody-project
   name: appsody-hello-world
 spec:
   runLatest:
@@ -8,7 +9,7 @@ spec:
       revisionTemplate:
         spec:
           container:
-            image: docker-registry.default.svc:5000/kabanero/appsody-hello-world
+            image: docker-registry.default.svc:5000/appsody-project/appsody-hello-world
             imagePullPolicy: Always
             ports:
             - containerPort: 9080
