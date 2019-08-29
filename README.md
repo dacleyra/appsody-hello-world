@@ -1,1 +1,0 @@
-# appsody-hello-world
