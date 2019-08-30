@@ -5,3 +5,4 @@ metadata:
 spec:
   applicationImage: docker-registry.default.svc:5000/appsody-project/appsody-hello-world
   stack: java-microprofile
+  createKnativeService: true
