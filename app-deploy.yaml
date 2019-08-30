@@ -2,6 +2,7 @@ apiVersion: appsody.dev/v1beta1
 kind: AppsodyApplication
 metadata:
   name: appsody-hello-world
+  namespace: appsody-project
 spec:
   applicationImage: docker-registry.default.svc:5000/appsody-project/appsody-hello-world
   stack: java-microprofile
