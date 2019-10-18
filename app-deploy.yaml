@@ -1,11 +1,11 @@
 apiVersion: appsody.dev/v1beta1
 kind: AppsodyApplication
 metadata:
-  name: appsodykab2
+  name: appsody-hello-world
 spec:
   # Add fields here
   version: 1.0.0
-  applicationImage: dev.local/appsodykab2 
+  applicationImage: dev.local/appsody-hello-world
   stack: java-microprofile
   service:
     type: NodePort

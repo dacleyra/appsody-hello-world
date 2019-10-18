@@ -1,2 +1,2 @@
-project-name: appsodykab2
+project-name: appsody-hello-world
 stack: kabanero/java-microprofile:0.2
