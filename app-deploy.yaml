@@ -1,9 +1,30 @@
 apiVersion: appsody.dev/v1beta1
 kind: AppsodyApplication
 metadata:
-  name: appsody-hello-world
-  namespace: kabanero
+  name: appsodykab2
 spec:
-  applicationImage: docker-registry.default.svc:5000/kabanero/appsody-hello-world
+  # Add fields here
+  version: 1.0.0
+  applicationImage: dev.local/appsodykab2 
   stack: java-microprofile
-  createKnativeService: true
+  service:
+    type: NodePort
+    port: 9080
+    annotations:
+      prometheus.io/scrape: 'true'
+  readinessProbe:
+    failureThreshold: 12
+    httpGet:
+      path: /health/ready
+      port: 9080
+    initialDelaySeconds: 5
+    periodSeconds: 2
+  livenessProbe:
+    failureThreshold: 12
+    httpGet:
+      path: /health/live
+      port: 9080
+    initialDelaySeconds: 5
+    periodSeconds: 2
+  expose: true
+  createKnativeService: false
